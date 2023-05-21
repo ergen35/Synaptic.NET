@@ -1,20 +1,44 @@
 using System;
-using Synaptic.NET.Core;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Synaptic.NET;
 
 namespace Synaptic.NET.Tests;
 
 
-[SynapticServiceDependency("zero_servcie", Version = 1), SynapticServiceDependency("uno_srv", Version = 2)]
-[SynapticServiceDependencies("v1.zero_kawa", "v3.mgmt_serv")]
+[SynapticServiceDependencies("users_mgmt", "mgmt_serv")]
 public class BizarreClass : ISynapticService
 {
+    private readonly ISynapticContext ctx;
+    
     public string Name => "ServiceName";
-    public int Version => 2;
-    public string Description => "This servie sucks";
+    public uint Version => 2;
 
-    [SynapticAction]
-    public Version GetVersion()
+    public BizarreClass(ISynapticContext ctx)
     {
-        return new Version(Version.ToString());
+        this.ctx = ctx;
+    }
+
+    //This is an Action
+    [SynapticAction]
+    [HttpGet("battery-level")]
+    [Authorize(Policy = "battery-level:read")]
+    public double GetBatteryLife()
+    {
+        return Random.Shared.Next(maxValue: 100, minValue: 0) * Random.Shared.NextDouble();
+    }
+
+    //This is an event handler
+    [SynapticEventHandler]
+    public void OnBizarreAction(BatteryFullEvent EventData)
+    {
+        Console.WriteLine("The current event is: " + ctx.CurrentEvent);
+    }
+
+
+    //This is a private method that'll not get exposed
+    private void MyMethod()
+    {
+        //do some random stuff there
     }
 }
