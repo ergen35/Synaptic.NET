@@ -1,7 +1,7 @@
 namespace Synaptic.NET
 {
-public class SynapticServiceCallOptions
-{
-    
-}
+    public class SynapticServiceCallOptions
+    {
+
+    }
 }

@@ -27,3 +27,8 @@ Uen SynapticEventHandler est une méthode qui traite d'un event
 - est obligatoirement générique (T). T représente le type de l'événement
 - retourne obligatoirement void ou Task
 - Un objet de type SynapticContext disponible par défaut (recommandé de l'injecter par constructeur)
+
+
+
+
+[Version 2: Services are Stateful and State can be serialized]

@@ -1,7 +1,6 @@
-using System;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Synaptic.NET;
+using System;
 
 namespace Synaptic.NET.Tests;
 
@@ -10,7 +9,7 @@ namespace Synaptic.NET.Tests;
 public class BizarreClass : ISynapticService
 {
     private readonly ISynapticContext ctx;
-    
+
     public string Name => "ServiceName";
     public uint Version => 2;
 

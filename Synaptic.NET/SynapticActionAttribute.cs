@@ -6,8 +6,8 @@ namespace Synaptic.NET;
 sealed class SynapticActionAttribute : Attribute
 {
     public SynapticActionAttribute()
-    {   
+    {
         // TODO: Implement code here
         throw new NotImplementedException();
     }
-}   
+}

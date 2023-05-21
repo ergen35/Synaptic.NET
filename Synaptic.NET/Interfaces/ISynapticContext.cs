@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-
 namespace Synaptic.NET;
 
-public interface ISynapticContext: IServiceInterCom
+public interface ISynapticContext : IServiceInterCom
 {
     public int Level { get; set; }
     public ServiceBroker Broker { get; set; }
