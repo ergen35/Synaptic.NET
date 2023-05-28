@@ -1,34 +1,34 @@
 Synaptic.NET
 
-Le projet est basé sur Moleculer
+Le projet est basÃ© sur Moleculer
 
-Le concept est simple: décomposer un système en micro-services écrits dans des containers
-spécialisés plutôt que des Api Rest, Grpc ou Websocket brutes
+Le concept est simple: dÃ©composer un systÃ¨me en micro-services Ã©crits dans des containers
+spÃ©cialisÃ©s plutÃ´t que des Api Rest, Grpc ou Websocket brutes
 
-Un micro-service implémente l'interface [ISynapticService]
-Un micro-service est décomposé en
-- Actions (handler de requêtes) désignent toutes les méthodes publiques d'un SynapticService
-- les Actions peuvent être décorées des attributs [Authorize(Roles, Policy), HttpPost, HttpGet, HttpPut, HttpPatch, HttpDelete] 
-- EventHandlers / EventProcessors décorées à l'aide de l'attribut [SynapticEventHandler]
-- Methodes (au sens OO) qui sont les méthodes privées d'un SynapticService
-- Description (propriété)
+Un micro-service implÃ©mente l'interface [ISynapticService]
+Un micro-service est dÃ©composÃ© en
+- Actions (handler de requÃªtes) dÃ©signent toutes les mÃ©thodes publiques d'un SynapticService
+- les Actions peuvent Ãªtre dÃ©corÃ©es des attributs [Authorize(Roles, Policy), HttpPost, HttpGet, HttpPut, HttpPatch, HttpDelete] 
+- EventHandlers / EventProcessors dÃ©corÃ©es Ã  l'aide de l'attribut [SynapticEventHandler]
+- Methodes (au sens OO) qui sont les mÃ©thodes privÃ©es d'un SynapticService
+- Description (propriÃ©tÃ©)
 - Name (prop)
 - Version (prop)
-- Dependences (spécifie les dépendances sur les services) grâce à l'attribut [SynapticServiceDependency(Name, Version)]
+- Dependences (spÃ©cifie les dÃ©pendances sur les services) grÃ¢ce Ã  l'attribut [SynapticServiceDependency(Name, Version)]
 
 
-Une SynapticAction est une méthode, elle peut retourner n'importe quel objet ex: un poco, etc
-une SynapticAction qui retourne void est une FiniteEvaluator. Elle noie/termine une requête.
+Une SynapticAction est une mÃ©thode, elle peut retourner n'importe quel objet ex: un poco, etc
+une SynapticAction qui retourne void est une FiniteEvaluator. Elle noie/termine une requÃªte.
 retourne une NoContentResult avec le code http correspondant.
 
-Une SynapticAction Accepte des paramètres comme toute Action d'un controlleur MVC.
-- Un objet de type ISynapticContext disponible par défaut (recommandé de l'injecter par constructeur)
-- Si ajouté aux paramètres d'une action décorée avec l'attribut [SynapticAction], Synaptic.NET se chargera de l'injecter
+Une SynapticAction Accepte des paramÃ©tres comme toute Action d'un controlleur MVC.
+- Un objet de type ISynapticContext disponible par dÃ©faut (recommandÃ© de l'injecter par constructeur)
+- Si ajoutÃ© aux paramÃ¨tres d'une action dÃ©corÃ©e avec l'attribut [SynapticAction], Synaptic.NET se chargera de l'injecter
 
-Uen SynapticEventHandler est une méthode qui traite d'un event 
-- est obligatoirement générique (T). T représente le type de l'événement
+Uen SynapticEventHandler est une mÃ©thode qui traite d'un event 
+- est obligatoirement gÃ©nÃ©rique (T). T reprÃ©sente le type de l'Ã©vÃ©nement
 - retourne obligatoirement void ou Task
-- Un objet de type SynapticContext disponible par défaut (recommandé de l'injecter par constructeur)
+- Un objet de type SynapticContext disponible par dÃ©faut (recommandÃ© de l'injecter par constructeur)
 
 
 
