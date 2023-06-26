@@ -7,7 +7,7 @@ namespace Synaptic.NET
     public class ServiceBroker : IServiceBroker
     {
         public string RequestID { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public SynapticEndpoint Endpoint { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public ISynapticEndpoint Endpoint { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public Dictionary<string, object> Metadata { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public Task Broadcast<E>(E payload) where E : ISynapticEvent

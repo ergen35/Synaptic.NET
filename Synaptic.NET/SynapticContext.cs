@@ -7,7 +7,7 @@ namespace Synaptic.NET
     public class SynapticContext : ISynapticContext
     {
         public int Level { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public ServiceBroker Broker { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IServiceBroker Broker { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public string CurrentAction => throw new NotImplementedException();
 

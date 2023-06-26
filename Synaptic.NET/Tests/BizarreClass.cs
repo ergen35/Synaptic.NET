@@ -31,7 +31,7 @@ public class BizarreClass : ISynapticService
     [SynapticEventHandler]
     public void OnBizarreAction(BatteryFullEvent EventData)
     {
-        Console.WriteLine("The current event is: " + ctx.CurrentEvent);
+        Console.WriteLine("Processing event: {0}", EventData.EventName);
     }
 
 
