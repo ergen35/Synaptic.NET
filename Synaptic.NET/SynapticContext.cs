@@ -6,15 +6,14 @@ namespace Synaptic.NET
 {
     public class SynapticContext : ISynapticContext
     {
-        public int Level { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public IServiceBroker Broker { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public IServiceBroker Broker { get; set; }
 
-        public string CurrentAction => throw new NotImplementedException();
-
-        public string CurrentEvent => throw new NotImplementedException();
-
-        public string Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public Dictionary<string, object> Metadata { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        ///<summary>
+        /// SynapticContext Instance Id
+        ///</summary>
+        public string Id { get; set; }
+        
+        public Dictionary<string, object> Metadata { get; set; }
 
         public Task Broadcast<E>(E payload) where E : ISynapticEvent
         {
