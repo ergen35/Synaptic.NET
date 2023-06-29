@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Synaptic.NET.Core.csproj",
+                "${workspaceFolder}/Synaptic.NET.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Synaptic.NET.Core.csproj",
+                "${workspaceFolder}/Synaptic.NET.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/Synaptic.NET.Core.csproj"
+                "${workspaceFolder}/Synaptic.NET.csproj"
             ],
             "problemMatcher": "$msCompile"
         }
