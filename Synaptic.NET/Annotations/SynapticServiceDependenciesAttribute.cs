@@ -10,8 +10,6 @@ sealed class SynapticServiceDependenciesAttribute : Attribute
     public SynapticServiceDependenciesAttribute(params string[] services)
     {
         this.serviceDependencies = services;
-
-        // TODO: Implement code here
         throw new System.NotImplementedException();
     }
 
