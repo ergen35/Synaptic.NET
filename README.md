@@ -86,4 +86,4 @@ None
 - Add building workflow
 - Define Project's Licence
 - Define Issues handling process
-- Define contributing Guide
+- Define contributing Guide and branchs setup
