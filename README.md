@@ -39,6 +39,8 @@ None
 
 ## TODOs
 
+**Note**: Todos may not be checked following the order they are defined (from bottom to top).
+
 ### Advanced
 
 - Add NATS Transport
@@ -46,6 +48,8 @@ None
 
 ### Timeline
 
+- Add support for monitoring and healthchecks (included in aspnetcore)
+- Build the Topogon app
 - Cleanup APIs
 - Build samples and use cases
 - Build client for various langages (JS/TS, Kotlin, Java, Golang, Python, etc.)
@@ -65,6 +69,7 @@ None
 - Add support for services dependencies via the SynapticServiceDependenciesAttribute.
 - Add automated performance benchmarking
 - Add various utilities to ease services building
+- Add support for Caching
 - Finish service discovery
 - Add Grpc Transport
 - Add Transports
