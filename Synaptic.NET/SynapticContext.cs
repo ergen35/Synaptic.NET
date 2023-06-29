@@ -27,7 +27,7 @@ namespace Synaptic.NET
 
         public string GetFromMetadata(string key)
         {
-            ArgumentException.ThrowIfNullOrEmpty(key);
+            ArgumentNullException.ThrowIfNullOrEmpty(key);
 
             if(this.Metadata.ContainsKey(key)) 
                 return Metadata[key];
