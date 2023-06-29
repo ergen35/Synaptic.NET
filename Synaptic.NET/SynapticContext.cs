@@ -13,7 +13,7 @@ namespace Synaptic.NET
         ///</summary>
         public string Id { get; set; }
         
-        public Dictionary<string, object> Metadata { get; set; }
+        public Dictionary<string, string> Metadata { get; set; } = new();
 
         public Task Broadcast<E>(E payload) where E : ISynapticEvent
         {
@@ -25,39 +25,14 @@ namespace Synaptic.NET
             throw new NotImplementedException();
         }
 
-        public T GetFromMetadata<T>(string key) where T : class
+        public string GetFromMetadata(string key)
         {
-            throw new NotImplementedException();
-        }
+            ArgumentException.ThrowIfNullOrEmpty(key);
 
-        public Task<ICallResponse<T>> InvokeServiceAction<T>(string versionedActionPath, SynapticServiceCallOptions callOptions = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ICallResponse<T>> InvokeServiceAction<T>(int version, string service, string action, SynapticServiceCallOptions callOptions = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ICallResponse<T>> InvokeServiceAction<T, P>(string versionedActionPath, P payload, SynapticServiceCallOptions callOptions = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ICallResponse<T>> InvokeServiceAction<T, P>(int version, string service, string action, P payload, SynapticServiceCallOptions callOptions = null)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task Publish<E>(E payload) where E : ISynapticEvent
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task Publish<E>(E payload, string filter) where E : ISynapticEvent
-        {
-            throw new NotImplementedException();
+            if(this.Metadata.ContainsKey(key)) 
+                return Metadata[key];
+            else 
+                throw new KeyNotFoundException($"Unable to find the {key} in the Context Metadata.");
         }
     }
 }
