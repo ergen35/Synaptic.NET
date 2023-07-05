@@ -7,10 +7,6 @@ namespace Synaptic.NET
     public class SynapticContext : ISynapticContext
     {
         public IServiceBroker Broker { get; set; }
-
-        ///<summary>
-        /// SynapticContext Instance Id
-        ///</summary>
         public string Id { get; set; }
         
         public Dictionary<string, string> Metadata { get; set; } = new();
